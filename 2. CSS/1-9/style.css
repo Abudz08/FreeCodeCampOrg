@@ -1,0 +1,70 @@
+/* CSS Selectors */
+
+/* UNIVERSAL */
+* {
+    font-family: monospace;
+}
+
+/* BODY */
+body {
+    font-size: 22px;
+    border: 3px solid black;
+}
+
+/* PARAGRAPH */
+p {
+    font-size: 64px;
+    color: purple!important;        /*!important will over rule all */
+}
+
+/* ANCHOR */
+a {
+    color: #FFFFFF;                  /* hexadecimal */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* CLASS */
+.gray {
+    color: gray;
+}
+
+/* PSEUDOCLASS */
+a:visited {
+    color: rgba(0, 0, 0, 0.5)       /* rgba for transparency or opacity */
+}
+
+a:hover {
+    color: blue;
+}
+
+a:active, a:focus{
+    color: red;
+    opacity: 0.7;
+}
+
+/* ID */
+#second {
+    font-style: italic;
+}
+
+/* GROUP */
+h1, h2, h3 {
+    color: rgb(79, 94, 12);
+}
+
+/* NESTED */
+p span {
+    text-transform: uppercase;
+    background-color: gold;
+}
+
+
+/* ORDER LIST */
+ol {
+    list-style-type: decimal-leading-zero;
+}
+
+li {
+    display: inline-block;
+}
