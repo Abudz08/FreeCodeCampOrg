@@ -1,67 +1,85 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: #333;
-    color: whitesmoke;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    padding: 15px;
+body {
+    transition: font-size 0.3s ease-out;
+    font-size: 1em;
+    font-family: monospace;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-auto-rows: 5rem auto 4rem;
+    grid-template-areas: 
+        "hd hd hd hd hd hd hd hd hd"
+        "sb sb mn mn mn mn mn mn mn"
+        "ft ft ft ft ft ft ft ft ft";
+}
 
-    position: fixed;
-    top: 0;
-    right: 0;
+.el {
+    background-color: #333;
+    color: #fff;
+    display: grid;
+    place-content: center;
+}
+
+.header {
+    grid-area: hd;
+    background-color: #333;
+    grid-template-columns: 3fr 1fr 4fr;
     width: 100%;
     padding: 1rem;
-}
-header h1 {
-    padding: 2rem;
+
+    align-items: center; 
 }
 
-nav {
-    min-width: 345px;
+.header img {
+    height: 50px;
+    border: 2px solid #333;
+    border-radius: 25px;
+}
+.header nav {
     text-align: right;
-    word-spacing: 0.5rem;
-    padding: 1rem;
 }
 
-header a,
-header a:visited {
+.header a,
+.header a:visited,
+.sidebar a,
+.sidebar a:visited {
     color: whitesmoke;
     text-decoration: none;
 }
 
-header a:hover,
-header a:focus {
+.header a:hover,
+.header a:focus,
+.sidebar a:hover,
+.sidebar a:focus {
     text-decoration: underline;
 }
 
-main {
-    padding: 100px 10px;
+.sidebar {
+    grid-area: sb;
+    display: flex;
 }
 
-p {
-    word-spacing: 0.5rem;
-    font-size: 24px;
-    text-align: justify;
-    
+main {
+    grid-area: mn;
+    padding: 0.5rem;
 }
-.about-me {
+
+.introduction {
     background-color: bisque;
     border: 1px solid #333;
     padding: 1rem;
     display: flow-root;
 }
 
-/* .about-me h1 {
-    position: sticky;
-    top: 100px;
-} */
+.introduction p {
+    text-align: justify;
+    text-indent: 2rem;
+}
 
 .left {
     float: left;
@@ -69,10 +87,61 @@ p {
     width: 30%;
 }
 
-.quote {
-    font-size: 3rem;
+.biography {
+    background-color: bisque;
+    border: 1px solid #333;
+    padding: 1rem;
+    display: flow-root;
+}
+
+.biography p {
+    margin-top: 1rem;
+}
+
+.biography img{
+    transform: scaleX(-1);
+}
+
+.right {
+    float: right;
+    margin-left: 1rem;
+    width: 30%;
+}
+
+.skills {
+    background-color: bisque;
+    border: 1px solid #333;
+    padding: 1rem;
+    display: flow-root;
     text-align: center;
-    color: #333;
+}
+
+.skills p {
+    margin-top: 1rem;
+}
+
+.columns {
+    columns: 3;
+    column-rule: 1px solid #333;
+}
+
+.columns h3 {
+    break-before: column;
+}
+
+.columns ul {
+    list-style-type: none;
+    line-height: 1.5rem;
+}
+
+.footer {
+    grid-area: ft;
+    background-color: #333;
+    text-align: center;
+}
+
+.quote {
+    text-align: center;
     column-span: all;
 }
 
@@ -80,19 +149,33 @@ p {
     white-space: nowrap;
 }
 
-footer {
-    background-color: #333333;
-    padding: 1rem;
-    text-align: center;
 
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%; /* Stretch footer to full width */
+/* @media screen and (max-width: 480px){
+    body {
+        font-size: 11px;
+    }
 }
 
-footer p {
-    color: #ffffff;
-    font-size: 12px;
-    margin: 0;
+@media screen and (min-width: 481px) and (max-width: 768px){
+    body {
+        font-size: 12px;
+    }
 }
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    body {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px){
+    body {
+        font-size: 26px;
+    }
+}
+
+@media screen and (min-width: 1201px){
+    body {
+        font-size: 32px;
+    }
+} */
