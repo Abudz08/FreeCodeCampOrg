@@ -18,6 +18,10 @@ body {
         "ft ft ft ft ft ft ft ft ft";
 }
 
+img {
+    display: block;
+}
+
 .el {
     background-color: #333;
     color: #fff;
@@ -42,6 +46,14 @@ body {
 }
 .header nav {
     text-align: right;
+    
+    position: fixed;
+    right: 0;
+    background-color: #333;
+    z-index: 1;
+    padding: 0.5rem;
+    border: 1px solid #333;
+    border-radius: 10px;
 }
 
 .header a,
@@ -62,6 +74,7 @@ body {
 .sidebar {
     grid-area: sb;
     display: flex;
+    text-align: center;
 }
 
 main {
@@ -98,14 +111,29 @@ main {
     margin-top: 1rem;
 }
 
-.biography img{
-    transform: scaleX(-1);
+.hero {
+    border-bottom: 2px solid #000;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
 }
 
-.right {
-    float: right;
-    margin-left: 1rem;
-    width: 30%;
+.hero h1 {
+    font-size: 300%;
+}
+
+.profile-pic {
+   width: 30%;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: auto;
+    min-width: 100px;
+    border: 5px double gray;
+    border-radius: 50%;
 }
 
 .skills {
@@ -150,32 +178,44 @@ main {
 }
 
 
-/* @media screen and (max-width: 480px){
+@media screen and (max-width: 480px){
     body {
-        font-size: 11px;
+        font-size: 0.6em;
     }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px){
     body {
-        font-size: 12px;
+        font-size: 0.9em;
     }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px){
     body {
-        font-size: 20px;
+        font-size: 1.5em;
     }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1200px){
     body {
-        font-size: 26px;
+        font-size: 2.1em;
     }
 }
 
 @media screen and (min-width: 1201px){
     body {
-        font-size: 32px;
+        font-size: 2.4em;
     }
-} */
+}
+
+@media screen and (min-width: 2000px){
+    body {
+        font-size: 4em;
+    }
+
+    .header img {
+        height: 70px;
+        border: 2px solid #333;
+        border-radius: 35px;
+    }
+}
