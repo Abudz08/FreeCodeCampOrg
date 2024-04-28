@@ -10,9 +10,29 @@ img {
     display: block;
 }
 
+.nowrap {
+    white-space: nowrap;
+}
+
+
 body {
     font-family: "Nunito", sans-serif;
     min-height: 100vh;
+    background-color: aliceblue;
+
+    /* background-image:
+        url(./images/hero.png),
+        linear-gradient(to left, royalblue, steelblue, #fff);
+    background-repeat: repeat-y, no-repeat;
+    background-position: right, center;
+    background-size: 20%, auto; */
+}
+
+.container {
+    background-color: rgb(251, 210, 156);
+    background-image: url('./images/bikini\ bottom.JPG');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .hero {
@@ -22,7 +42,20 @@ body {
     justify-content: flex-start;
     align-items: center;
     gap: 30px;
+
+    background-color: hsla(0, 0%, 0%, 0.3);
 }
+
+.hero h1 {
+    font-size: 350%;
+    color: aliceblue;
+    text-shadow: 2px 2px 5px #000;
+    text-align: center;
+
+    
+    border-radius: 0.5rem;
+}
+
 
 .profile-pic-figure {
     width: 35%;
@@ -45,4 +78,15 @@ body {
 .example img {
     width: 25%;
     height: auto;
+}
+
+.clip {
+    font-weight: 800;
+    font-size: 10rem;
+    text-align: center;
+    background-image: url("./images/bikini\ bottom.JPG");
+    background-size: 100%;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    color: hsla(0, 0%, 0%, 0.2);
 }
