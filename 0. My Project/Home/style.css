@@ -109,6 +109,21 @@ main {
     padding: 0.5rem;
 }
 
+.hero {
+    border: 2px solid #000;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    background-color: rgb(251, 210, 156);
+    border-radius: 0.5rem;
+}
+
+.hero h1 {
+    font-size: 300%;
+}
+
 .introduction {
     background-color: bisque;
     border: 1px solid #333;
@@ -123,7 +138,7 @@ main {
     text-align: justify;
     text-indent: 2rem;
     margin-top: 1rem;
-    line-height: 1.5rem;
+    line-height: 1.5em;
 }
 
 .left {
@@ -145,6 +160,7 @@ main {
     background-position: bottom left;
 }
 
+
 .biography p {
     margin-top: 1rem;
     font-weight: 500;
@@ -154,21 +170,6 @@ main {
 
     background-color: hsla(0, 0%, 0%, 0.2);
     border-radius: 0.5rem;
-}
-
-.hero {
-    border: 2px solid #000;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    background-color: rgb(251, 210, 156);
-    border-radius: 0.5rem;
-}
-
-.hero h1 {
-    font-size: 300%;
 }
 
 .profile-pic {
@@ -196,6 +197,10 @@ main {
     margin-top: 1rem;
 }
 
+.skills ul{
+    line-height: 1.5em;
+} 
+
 .columns {
     columns: 3;
     column-rule: 2px solid #000;
@@ -212,17 +217,32 @@ main {
     line-height: 1.5rem;
 }
 
+.education {
+    background-color: bisque;
+    border: 1px solid #333;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
 
-/* .clip {
-    font-weight: 800;
-    font-size: 10rem;
-    text-align: center;
-    background-image: url("../Images/killua\ wallpaper.jpg;
-    background-size: 100%;
+.education h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.education h3 {
+    text-align: center;
+}
+
+.education .hero {
+    background-image: url("../Images/killua.jpg");
+    background-size: 100%;
+    background-position: center 1110px;
     -webkit-background-clip: text;
+    background-clip: text;
     color: hsla(0, 0%, 0%, 0.2);
-} */
+}
 
 .footer {
     grid-area: ft;
@@ -235,38 +255,112 @@ main {
     column-span: all;
 }
 
-
-
-
+/* MOBILE */
 @media screen and (max-width: 480px){
+    .sidebar {
+        display: none;
+    }
+
     body {
-        font-size: 0.6em;
+    grid-template-areas: 
+        "hd hd hd hd hd hd hd hd hd"
+        "mn mn mn mn mn mn mn mn mn"
+        "ft ft ft ft ft ft ft ft ft";
+    }
+    
+}
+
+/* MOBILE S */
+@media screen and (max-width: 374px){
+    body {
+        font-size: 0.5em;
+    }
+
+    .education .hero {
+        background-position: center 290px;
     }
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px){
+/* MOBILE M */
+@media screen and (min-width: 375px){
     body {
-        font-size: 0.9em;
+        font-size: 0.7em;
+    }
+
+    .education .hero {
+        background-position: center 350px;
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px){
+/* MOBILE L */
+@media screen and (min-width: 425px){
     body {
-        font-size: 1.5em;
+        font-size: 0.8em;
+    }
+
+    .education .hero {
+        background-position: center 400px;
     }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1200px){
+
+@media screen and (min-width: 480px){
     body {
-        font-size: 2.1em;
+        font-size: 0.8em;
+    }
+}
+}
+
+/* TABLET */
+@media screen and (min-width: 768px){
+    body {
+        font-size: 1.4em;
+    }
+
+    .education .hero {
+        background-position: center 600px;
     }
 }
 
-@media screen and (min-width: 1201px){
+/* LAPTOP */
+@media screen and (min-width: 1024px){
     body {
-        font-size: 2.4em;
+        font-size: 1.9em;
+    }
+
+    .education .hero {
+        background-position: center 800px;
     }
 }
+
+@media screen and (min-width: 1200px){
+    body {
+        font-size: 2.3em;
+    }
+} 
+
+/* LAPTOP L */
+@media screen and (min-width: 1440px){
+    body {
+        font-size: 2.5em;
+        grid-auto-rows: 3em auto 3em;
+    }
+
+    .skills ul {
+        line-height: 1.5em;
+    }
+} 
+
+/* 4K */
+@media screen and (min-width: 2560px){
+    body {
+        font-size: 4em;
+    }
+
+    .skills ul {
+        line-height: 1.5em;
+    }
+} 
 
 
 
