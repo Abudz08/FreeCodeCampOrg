@@ -7,11 +7,12 @@
     <meta name="description" content="About The Little Taco Shop">
     <title>About The Little Taco Shop</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js" defer></script>
 </head>
 <body>
 
     <header class="header">
-        <h1 class="header__h1">The Little Taco Shop</h1>
+        <h1 class="header__h1">Bikini Bottom</h1>
         <nav class="header__nav">
             <ul class="header__ul">
                 
@@ -39,6 +40,32 @@
             The Bikini Bottom
         </figcaption>
     </section>
+
+
+    <main>
+        <article id="about" class="main__article about">
+            <h2>About <abbr title="The Bikini Bottom">BB</abbr></h2>
+            <p>
+                <abbr title="The Bikini Bottom">BB</abbr> was founded in <time datetime="2024">2024</time>. Bikini Bottom was built from the <strong>love of the citizens</strong>. We hope our city adds a unique and interesting place to our sea.
+            </p>
+            <aside class="about__trivia">
+                <h3>BB Trivia</h3>
+                <details>
+                    <summary>Who is the first citizen in BB?</summary>
+                    <p class="about__trivia-answer">
+                        The Flying Dutchman was the first to discover the BB and refuse to leave even after death.    
+                    </p>
+                </details>
+            </aside>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <span class="nowrap">Little Taco Shop</span>
+        </p>
+    </footer>
     
 </body>
 </html>

@@ -7,11 +7,12 @@
     <meta name="description" content="The official website for The Little Taco Shop">
     <title>The Little Taco Shop</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js" defer></script>
 </head>
 
 <body>
     <header class="header">
-        <h1 class="header__h1">Little Taco Shop</h1>
+        <h1 class="header__h1">Bikini Bottom</h1>
         <nav class="header__nav">
             <ul class="header__ul">
                 <li>
@@ -40,25 +41,67 @@
         </figcaption>
     </section>
 
-    <main>
-        <article id="about">
-            <h2>About <abbr title="The Bikini Bottom">BB</abbr></h2>
-            <p>
-                <abbr title="The Bikini Bottom">BB</abbr> was founded in <time datetime="2024">2024</time>. Bikini Bottom was built from the <strong>love of the citizens</strong>. We hope our city adds a unique and interesting place to our sea.
-            </p>
-            <aside>
-                <h3>BB Trivia</h3>
-                <details>
-                    <summary>Who is the first citizon in BB?</summary>
-                    <p>
-                        The Flying Dutchman was the first to discover the BB and refuse to leave even after death.    
-                    </p>
-                </details>
-            </aside>
+    <main class="main">
+        <article id="menu" class="main__article menu">
+            <h2 class="menu__h2">Our Menu</h2>
+            <table class="menu__container">
+                <caption class="offscreen">Our Tacos</caption>
+                <thead>
+                    <tr>
+                        <th class="menu__header" scope="col">Menu</th>
+                        <th class="menu__header" scope="col">Name</th>
+                        <th class="menu__header" scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="menu__item menu__cr" scope="row" rowspan="3">
+                            Krabby Patty
+                        </th>
+                        <td class="menu__item">Krabby Patty Original</td>
+                        <td class="menu__item">$1.00</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">Krabby Patty w/ cheese</td>
+                        <td class="menu__item">$1.50</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">Krabby Patty w/ egg</td>
+                        <td class="menu__item">$1.50</td>
+                    </tr>
+                    <tr>
+                        <th  class="menu__item menu__sf"scope="row" rowspan="3">
+                            Drinks
+                        </th>
+                        <td class="menu__item">Iced Tea</td>
+                        <td class="menu__item">$0.50</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">Avocado Shake</td>
+                        <td class="menu__item">$2.00</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">Soda</td>
+                        <td class="menu__item">$1.00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td  class="menu__item menu__cs" colspan="3">
+                            Krabby Patty Overload Special $4
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            
+            <p class="center"><a href="#">Back to Top</a></p>
         </article>
     </main>
-
-
-    
+    <footer class="footer">
+        <p>
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <span class="nowrap">Little Taco Shop</span>
+        </p>
+    </footer>
 </body>
 </html>
