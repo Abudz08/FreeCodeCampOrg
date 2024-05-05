@@ -14,19 +14,26 @@ img {
 
 html {
     scroll-behavior: smooth;
+    font-size: var(--FS);
 }
 
 :root {
     /* FONTS */
     --FF-BODY: monospace;
     --FF-HEADER: Impact;
+    --FS: clamp(0.5rem, 3.1vw, 5rem);
     
     /* COLOR */
     --BG-DARK: #333;
     --BG-LIGHT: whitesmoke;
+    --BG-TITLE: rgb(251, 210, 156);
     --BG-HIGHLIGHT: bisque;
+
     --FONT-DARK: #333;
     --FONT-LIGHT: whitesmoke;
+    --FONT-SHADOW-DARK: 2px 2px 5px whitesmoke;
+    --FONT-SHADOW-LIGHT: 2px 2px 5px #333;
+
     --BG-RADIAL: radial-gradient(
         #fff, 
         bisque, 
@@ -38,6 +45,9 @@ html {
         #333,
         gray
        );
+
+    --BOX-SHADOW-DARK: 2px -2px 5px #333;
+    --BOX-SHADOW-LIGHT: 2px -2px 5px whitesmoke;
 
     /* BORDER */
     --BORDER: 2px solid #333;
@@ -63,28 +73,22 @@ body {
         "mn mn mn mn mn mn mn mn mn"
         "ft ft ft ft ft ft ft ft ft";
 
-    
-    
-    background-image: var(--BG-LINEAR-DARK);
-    max-width: 800px;
+    background-color: var(--BG-DARK);
     margin: 0 auto;
     border-left: var(--BORDER);
     border-right: var(--BORDER);
     box-shadow: 0 0 10px var(--BG-DARK);
 }
 
-/* body {
-    background-color: var(--BODY-BGCOLOR);
-    color: var(--FONT-COLOR);
-    min-height: 100vh;
-    max-width: 800px;
-    
-    border-left: var(--BORDERS);
-    border-right: var(--BORDERS);
-    box-shadow: 0 0 10px var(--BORDER-COLOR);
-} */
-
 /* || HEADER */
+
+
+h1, h2 {
+    font-family: var(--FF-HEADER);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
 .header {
     grid-area: hd;
     position: sticky;
@@ -102,21 +106,21 @@ body {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5em;
+    padding: 4vw;
 }
 
 .header__logo {
     /* resizing logo */
-    width: 50px;
+    width: 15vw;
 
     /* making logo a circle */
     border: var(--BORDER);
     border-radius: var(--BORDER-CIRCLE);
 }
 
-/* .header__h1 {
-    font-family: var(--FF-HEADER);
-} */
+.header__h1 {
+    font-size: 160%;
+}
 
 .header__button {
     /* making the button transparent */
@@ -124,8 +128,8 @@ body {
     border: none;
 
     /* giving the button dimension */
-    width: 48px;
-    height: 48px;
+    width: 8vw;
+    height: 8vw;
 
     /* making the button a container */
     display: flex;
@@ -141,8 +145,8 @@ body {
     background-color: var(--FONT-LIGHT);
 
     /* giving the icon dimension */
-    width: 30px;
-    height: 2px;
+    width: 8vw;
+    height: 0.5vh;
     border-radius: 5px;
 
     /* giving the icon fixed position inside the button */
@@ -161,13 +165,13 @@ body {
 .header__icon::before {
     /* changing the position of before character */
     /* transform: translate(x-offset, y-offset); */
-    transform: translate(-15px, -8px);
+    transform: translate(-4vw, -1.5vh);
 }
 
 .header__icon::after {
     /* changing the position of before character */
     /* transform: translate(x-offset, y-offset); */
-    transform: translate(-15px, 8px);
+    transform: translate(-4vw, 1.5vh);
 }
 
 :is(header:hover, header:focus-within) .header__icon {
@@ -180,18 +184,18 @@ body {
 
 :is(header:hover, header:focus-within) .header__icon::before {
     /* making the top line rotate 45deg CW */
-    width: 15px;
+    width: 4vw;
     transform: translateX(-7.5px) rotate(45deg);
 }
 
 :is(header:hover, header:focus-within) .header__icon::after {
     /* making the top line rotate 45deg CW */
-    width: 15px;
+    width: 4vw;
     transform: translateX(-7.5px) rotate(-45deg);
 }
 
 .header__nav {
-    background-color: var(--HEADER-BGCOLOR);
+    background-color: var(--BG-DARK);
     display: none;
     transform-origin: top center;
     animation: showMenu 0.5s ease-in-out forwards;
@@ -252,23 +256,244 @@ body {
     padding: 0.5em;
 }
 
+/* || MAIN NAVIGATION - PAGE CONTENT */
 .main__ul {
-    background-color: #fff;
+    background-color: var(--BG-DARK);
+    border: var(--BORDER);
+    border-radius: var(--BORDER-RADIUS);
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-evenly;
-    position: sticky;
-    top: 0;
+    padding: 0.1em;
 }
 
+.main a,
 .main a:any-link {
     text-decoration: none;
-    color: var(--FONT-DARK);
+    color: var(--FONT-LIGHT);
 }
 
 .main a:hover,
 .main a:focus {
     text-decoration: underline;
+}
+
+.container {
+    padding: 0.5em;
+    border: var(--BORDER);
+    border-radius: var(--BORDER-RADIUS);
+    margin-top: 0.5em;
+    background-color: var(--BG-TITLE);
+    box-shadow: var(--BOX-SHADOW-LIGHT);
+
+    /* this will enclose the contents inside the container to not overflow */
+    display: flow-root;
+}
+
+.main__h2 {
+    color: var(--FONT-DARK);
+    margin-bottom: 0.3em;
+
+    display: flex;
+    place-content: center;
+    text-shadow: var(--FONT-SHADOW-DARK);
+    text-transform: uppercase;
+
+    font-size: 250%;
+
+}
+
+.back-to-top {
+    background-color: var(--BG-DARK);
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.1em;
+    width: 30vw;
+    margin: auto;
+    margin-top: 0.5em;
+}
+
+/* || INTRODUCTON */
+.main__introduction-image {
+    width: 30vw;
+    height: auto;
+
+    /* this will let the text to be inline with the image */
+    float: left;
+    margin-right: 0.5em;
+    border-radius: var(--BORDER-RADIUS);
+}
+
+.main__p {
+    text-align: justify;
+    text-indent: 2em;
+    line-height: 1.3em;
+}
+
+
+/* || BIOGRAPHY */
+.main__biography {
+    background-image: url("./Images/killua\ wallpaper.png");
+    background-size: cover;
+   
+    padding: 0.5em;
+    box-shadow: var(--FONT-SHADOW-LIGHT);
+    border-radius: var(--BORDER-RADIUS);
+
+    /* this will give the biography a card looking */
+    width: 60vw;
+    height: auto;
+    margin: auto;
+}
+
+.main__biography-greet {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 0.5em;
+    gap: 0.5em;
+}
+
+.main__biography-profile-pic img {
+    width: 20vw;
+    height: auto;
+    border-radius: var(--BORDER-CIRCLE);
+    box-shadow: var(--FONT-SHADOW-LIGHT);
+}
+
+.main__biography-greet .main__h2 {
+    color: var(--FONT-LIGHT);
+    text-shadow: var(--BOX-SHADOW-DARK);
+}
+
+.biography__table {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-areas: 
+        "bn bn1"
+        "bc bc1"
+        "be be1"
+        "ba ba1"
+        "bb bb1";
+    gap: 0.1em;
+}
+
+.bio__name {
+    grid-area: bn;
+}
+
+.bio__contact {
+    grid-area: bc;
+}
+
+.bio__email {
+    grid-area: be;
+}
+
+.bio__address {
+    grid-area: ba;
+}
+
+.bio__bday {
+    grid-area: bb;
+}
+
+.bio__name,
+.bio__contact,
+.bio__email,
+.bio__address,
+.bio__bday {
+    color: var(--FONT-LIGHT);
+    font-weight: bold;
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.biography__content {
+    color: var(--FONT-LIGHT);
+    padding: 0.1em;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 5px #000;
+    border-radius: 3px;
+}
+
+/* || SKILLS */
+.skills__columns {
+    text-align: center;
+    columns: 3;
+    column-rule: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.skills__columns h3 {
+    break-before: column;
+    color: var(--FONT-LIGHT);
+    background-color: var(--BG-DARK);
+    border-radius: 3px;
+    padding: 0.1em;
+}
+
+.skills__ul {
+    list-style-type: none;
+    line-height: 1.5em;
+}
+
+/* || EDUCATION */
+
+.education__degree {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.education__level {
+    border: var(--BORDER);
+    width: 100%;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+    display: block;
+}
+
+.education__h3 {
+    background-color: var(--BG-DARK);
+    color: var(--FONT-LIGHT);
+    display: flex;
+    place-content: center;
+    padding: 0.2em;
+}
+
+.education__primary,
+.education__secondary,
+.education__bachelor {
+    padding: 0.5em;
+    line-height: 1.5em;
+}
+
+/* || EXPERIENCE */
+.experience__nav {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 0.5em;
+    background-color: var(--BG-DARK);
+    padding: 0.1em;
+    border-radius: 5px;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip:hover::before {
+    content: attr(data-tooltip);
+}
+
+#psi ul,
+#esi ul,
+#svr ul,
+#mgs ul {
+    margin-left: 1rem;
 }
 
 .footer {
@@ -280,3 +505,38 @@ body {
     text-align: center;
 }
 
+
+/* || FEEDBACK */
+
+.contact__h2 {
+    margin: 0;
+}
+
+.contact__fieldset {
+    border: none;
+}
+
+.contact__p {
+    margin: 0.5em 0;
+}
+
+.contact__label {
+    display: block;
+    font-weight: bold;
+}
+
+.contact__input,
+.contact__textarea {
+    padding: 0.5em;
+    border-radius: var(--BORDER-RADIUS);
+    border-width: 2px;
+    width: 100%;
+}
+
+.contact__button {
+    padding: 0.5em;
+    border-radius: var(--BORDER-RADIUS);
+    background-color: var(--BG-DARK);
+    color: var(--FONT-LIGHT);
+    font-weight: bold;
+}
