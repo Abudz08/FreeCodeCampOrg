@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Counter</title>
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <p id="welcome-el"></p>
+    <hr>
+    <h1>Click Counter</h1>
+    <h2 id="count-el">0</h2>
+    <button id="increment-btn" onclick="increment()">Click Me</button>
+    <button id="save-btn" onclick="save()">Save</button>
+    <button id="reset-btn" onclick="reset()">Reset</button>
+    <p id="save-el"></p>
+    <p id="click-el"></p>
+    
+    
+    
+
+    <script src="./passenger-counter.js"></script>
+    <hr>
+
+    <!-- <h1>Countdown Timer</h1>
+    <p id="display">00:00:00</p>
+    <button id="startButton">Start</button>
+    <button id="resetButton" disabled>Reset</button>
+
+    <script>
+        const display = document.getElementById("display");
+        const startButton = document.getElementById("startButton");
+        const resetButton = document.getElementById("resetButton");
+
+        let timerId = null; // To store the interval timer ID
+
+        // Function to format time in HH:MM:SS
+        function formatTime(seconds) {
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            const secondsLeft = seconds % 60;
+
+            return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secondsLeft.toString().padStart(2, '0')}`;
+        }
+
+        // Function to update the countdown display
+        function updateDisplay(countdown) {
+            display.textContent = formatTime(countdown);
+        }
+
+        // Function to start the countdown timer
+        function startTimer() {
+            let countdown = 60; // Set your desired countdown duration in seconds 
+            updateDisplay(countdown);
+
+            timerId = setInterval(() => {
+                countdown--;
+                updateDisplay(countdown);
+
+                if (countdown <= 0) {
+                    clearInterval(timerId);
+                    timerId = null;
+                    startButton.disabled = false;
+                    resetButton.disabled = false; // Enable reset button after timer finishes
+                }
+            }, 1000); // Update every 1 second
+        }
+
+        // Start button click event listener
+        startButton.addEventListener("click", () => {
+            if (!timerId) { // Only start if timer is not already running
+                startTimer();
+                startButton.disabled = true;
+                resetButton.disabled = true; // Disable reset button while timer runs
+            }
+        });
+
+        // Reset button click event listener
+        resetButton.addEventListener("click", () => {
+            if (timerId) {
+                clearInterval(timerId);
+                timerId = null;
+                updateDisplay(10); // Reset display to initial countdown value
+                startButton.disabled = false;
+            }
+        });
+    </script>
+
+    
+    <hr> -->
+    <a href="/0. My Project/projects.html">Go Back to Project Page</a>
+
+</body>
+</html>

@@ -21,7 +21,7 @@ html {
     /* FONTS */
     --FF-BODY: monospace;
     --FF-HEADER: Impact;
-    --FS: clamp(0.5rem, 3.1vw, 5rem);
+    --FS: clamp(0.5rem, 2.2vh, 3rem);
     
     /* COLOR */
     --BG-DARK: #333;
@@ -78,6 +78,9 @@ body {
     border-left: var(--BORDER);
     border-right: var(--BORDER);
     box-shadow: 0 0 10px var(--BG-DARK);
+
+    max-width: 768px;
+    
 }
 
 /* || HEADER */
@@ -93,6 +96,7 @@ h1, h2 {
     grid-area: hd;
     position: sticky;
     top: 0;
+    max-height: 150px;
 }
 
 .header,
@@ -106,16 +110,21 @@ h1, h2 {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 4vw;
+    padding: 5px;
 }
 
 .header__logo {
     /* resizing logo */
-    width: 15vw;
+    width: 10vh;
 
     /* making logo a circle */
     border: var(--BORDER);
     border-radius: var(--BORDER-CIRCLE);
+}
+
+.header__title-logo {
+    /* resizing logo */
+    width: 15vh;
 }
 
 .header__h1 {
@@ -128,8 +137,8 @@ h1, h2 {
     border: none;
 
     /* giving the button dimension */
-    width: 8vw;
-    height: 8vw;
+    width: 8vh;
+    height: 8vh;
 
     /* making the button a container */
     display: flex;
@@ -145,7 +154,7 @@ h1, h2 {
     background-color: var(--FONT-LIGHT);
 
     /* giving the icon dimension */
-    width: 8vw;
+    width: 8vh;
     height: 0.5vh;
     border-radius: 5px;
 
@@ -165,13 +174,13 @@ h1, h2 {
 .header__icon::before {
     /* changing the position of before character */
     /* transform: translate(x-offset, y-offset); */
-    transform: translate(-4vw, -1.5vh);
+    transform: translate(-4vh, -1.5vh);
 }
 
 .header__icon::after {
     /* changing the position of before character */
     /* transform: translate(x-offset, y-offset); */
-    transform: translate(-4vw, 1.5vh);
+    transform: translate(-4vh, 1.5vh);
 }
 
 :is(header:hover, header:focus-within) .header__icon {
@@ -286,6 +295,7 @@ h1, h2 {
     background-color: var(--BG-TITLE);
     box-shadow: var(--BOX-SHADOW-LIGHT);
 
+    
     /* this will enclose the contents inside the container to not overflow */
     display: flow-root;
 }
