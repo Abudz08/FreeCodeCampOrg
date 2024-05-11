@@ -43,7 +43,6 @@ function save() {
     saveEl.textContent = lap
     clickEl.textContent = totalClick
 
-    
     countEl.textContent = 0
     count = 0
     round += 1

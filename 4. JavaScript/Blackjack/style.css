@@ -1,0 +1,51 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: whitesmoke;
+    text-align: center;
+}
+
+button {
+    border-radius: 0.5em;
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 0.3em;
+}
+
+#start-btn {
+    background-color: green;
+}
+#getcard-btn {
+    background-color: blue;
+}
+#reset-btn {
+    background-color: red;
+}
+
+h1 {
+    background-color: rgba(180, 34, 34, 0.4);
+    border-radius: 0.5em;
+    width: 40vw;
+    margin: 0.2em auto;
+}
+
+.cards {
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    width: 80vw;
+    margin: auto;
+    margin-bottom: 0.2em;
+}
+
+.container {
+    background-image: url("./blackjack.avif");
+    background-size: cover;
+
+    border: 2px solid #333;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+
