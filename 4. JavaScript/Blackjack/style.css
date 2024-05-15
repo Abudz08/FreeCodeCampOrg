@@ -21,6 +21,9 @@ button {
 #reset-btn {
     background-color: red;
 }
+#submit-btn {
+    background-color: #333;
+}
 
 h1 {
     background-color: rgba(180, 34, 34, 0.4);
@@ -34,7 +37,7 @@ h1 {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 0.5em;
     border-radius: 0.5em;
-    width: 80vw;
+    width: 50vw;
     margin: auto;
     margin-bottom: 0.2em;
 }

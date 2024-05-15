@@ -8,9 +8,13 @@
     
 </head>
 <body>
-
     <div class="container">
-        <h1>BLACKJACK</h1>
+        <input type="name" id="player-el" placeholder="Player Name"></input><br>
+        <input type="number" id="bet-el" placeholder="$bet (min: 100)" min="100"></input><br>
+        <button id="submit-btn" onclick="submit()">SUBMIT</button>
+        
+        <p id="greeting-el"></p>
+        <h1>BLACKJACK!</h1>
         <div class="cards">
             <a>Your Cards:</a>
             <a id="card-el"></a><br>
@@ -18,15 +22,23 @@
             <a id="total-el"></a><br>
             <a id="result-el"></a><br>
         </div>
-        
+
         <button id="start-btn" onclick="startGame()">START GAME</button>
         <button id="getcard-btn" onclick="getCard()">GET CARD</button>
-        <button id="reset-btn" onclick="reset()">RESET</button>
+        <button id="reset-btn" onclick="reset()">RESET</button><br><br>
+
+        <label for="player-name">Player Name: </label>
+        <p id="player-name"></p>
+        
+        <label for="bet-amount">Remaining Bet: </label>
+        <p id="bet-amount"></p>
+
     </div>
     
-    <script src="script.js"></script>
+    
     <hr>
     <a href="/0. My Project/projects.html">Go Back to Project Page</a>
-    
+
+    <script src="script.js"></script>
 </body>
 </html>
