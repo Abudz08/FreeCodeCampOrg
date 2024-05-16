@@ -20,16 +20,22 @@ let betAmount = 0
 let player = document.getElementById("player-name")
 let bet = document.getElementById("bet-amount")
 
+let addbetEl = document.getElementById("addbet-el")
+
 function submit() {
+    isAlive = true
+
     playerName = playerEl.value
     betAmount = betEl.value
 
-    player.textContent += playerName
-    bet.textContent = betAmount
+    betEl.value = ""
+
+    player.textContent = playerName
+    bet.textContent = "$" + betAmount
 }
 
 function getRandomNumber() {
-    return Math.floor(Math.random() * 10) + 2;
+    return Math.floor(Math.random() * 13) + 1;
 }
 
 function getRandomCharacter() {
@@ -47,20 +53,41 @@ function startGame() {
     if ( isAlive === true && n === 0 ) {
 
         betAmount -= 50
-        bet.textContent = betAmount
+        bet.textContent = "$" + betAmount
         
         total = 0
 
         for (i=0; i<2; i++) {    
             suits[i] = getRandomCharacter()
             cards[i] = getRandomNumber()
-            total += cards[i]
 
-            if ( cards[i] === 11 ) {
+            if ( cards[i] === 1 ) {
+                if (total < 10) {
+                    cards[i] = 11
+                }
                 cardEl.textContent += `A${suits[i]} `
-            } else {
+            } 
+            
+            else if ( cards[i] === 11 ) {
+                cards[i] = 10
+                cardEl.textContent += `J${suits[i]} `
+            } 
+
+            else if ( cards[i] === 12 ) {
+                cards[i] = 10
+                cardEl.textContent += `Q${suits[i]} `
+            } 
+
+            else if ( cards[i] === 13 ) {
+                cards[i] = 10
+                cardEl.textContent += `K${suits[i]} `
+            } 
+            
+            else {
                 cardEl.textContent += `${cards[i]}${suits[i]} `
             }
+
+            total += cards[i]
         }
 
         totalEl.textContent = total
@@ -72,6 +99,7 @@ function startGame() {
         if (total === 21) {
             resultEl.textContent = `You've got Blackjack!`
             hasBlackJack = true
+            isAlive = false
         }
 
         if (total > 21) {
@@ -87,29 +115,41 @@ function getCard() {
     if (isAlive === true && n > 1) {
 
         betAmount -= 10
-        bet.textContent = betAmount
+        bet.textContent = "$" + betAmount
 
         cards.push(getRandomNumber())
         suits.push(getRandomCharacter())
 
-        if ( total > 10 && cards[n] === 11 ) {
-            cards[n] = 1
+        if ( total < 10 && cards[n] === 1 ) {
+            cards[n] = 11   
+            cardEl.textContent += `A${suits[i]} ` 
+        } 
 
-            total += cards[n]
-            cardEl.textContent += ` A${suits[n]}`
-            totalEl.textContent = total
-        } else {
-            total += cards[n]
-            cardEl.textContent += ` ${cards[n]}${suits[n]}`
-            totalEl.textContent = total
+        else if ( cards[n] === 1 ) {
+            cardEl.textContent += `A${suits[i]} `
+        } 
+        
+        else if ( cards[n] === 11 ) {
+            cards[n] = 10
+            cardEl.textContent += `J${suits[i]} `
+        } 
+
+        else if ( cards[n] === 12 ) {
+            cards[n] = 10
+            cardEl.textContent += `Q${suits[i]} `
+        } 
+
+        else if ( cards[n] === 13 ) {
+            cards[n] = 10
+            cardEl.textContent += `K${suits[i]} `
+        } 
+        
+        else {
+            cardEl.textContent += `${cards[n]}${suits[n]} `
         }
 
-        
-        // total += cards[n]
-        // cardEl.textContent += ` ${cards[n]}${suits[n]}`
-        // totalEl.textContent = total
-
-        
+        total += cards[n]
+        totalEl.textContent = total
 
         if (total < 21) {
             resultEl.textContent = `Get another card?`
@@ -119,7 +159,7 @@ function getCard() {
             resultEl.textContent = `You've got Blackjack!`
             hasBlackJack = true
             betAmount += 500
-            bet.textContent = betAmount
+            bet.textContent = "$" + betAmount
         }
 
         if (total > 21) {
@@ -127,8 +167,10 @@ function getCard() {
             isAlive = false
         }
 
-        n += 1
+        n += 1   
     }
+
+    
 
     if (hasBlackJack === true) {
         isAlive = false

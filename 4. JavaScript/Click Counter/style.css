@@ -47,6 +47,10 @@ button {
     background: green;
 }
 
+#save-el {
+    line-height: 1em;
+}
+
 #reset-btn {
     background: red;
 }

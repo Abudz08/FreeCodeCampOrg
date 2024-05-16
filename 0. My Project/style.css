@@ -14,14 +14,13 @@ img {
 
 html {
     scroll-behavior: smooth;
-    font-size: var(--FS);
 }
 
 :root {
     /* FONTS */
     --FF-BODY: monospace;
     --FF-HEADER: Impact;
-    --FS: clamp(0.5rem, 2.2vh, 3rem);
+    --FS: clamp(0.5rem, 3.1vw, 1.6rem);
     
     /* COLOR */
     --BG-DARK: #333;
@@ -58,6 +57,7 @@ html {
 /* || LAYOUT */
 body {
     font-family: var(--FF-BODY);
+    font-size: var(--FS);
     min-height: 100vh;
     display: grid;
 
@@ -320,6 +320,7 @@ h1, h2 {
     text-align: center;
     padding: 0.1em;
     width: 30vw;
+    min-width: 130px;
     margin: auto;
     margin-top: 0.5em;
 }
@@ -346,14 +347,13 @@ h1, h2 {
 .main__biography {
     background-image: url("./Images/killua\ wallpaper.png");
     background-size: cover;
-   
     padding: 0.5em;
     box-shadow: var(--FONT-SHADOW-LIGHT);
     border-radius: var(--BORDER-RADIUS);
 
     /* this will give the biography a card looking */
-    width: 60vw;
-    height: auto;
+    width: 250px;
+    font-size: 0.8rem;
     margin: auto;
 }
 
@@ -361,12 +361,10 @@ h1, h2 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 0.5em;
-    gap: 0.5em;
 }
 
 .main__biography-profile-pic img {
-    width: 20vw;
+    width: 70px;
     height: auto;
     border-radius: var(--BORDER-CIRCLE);
     box-shadow: var(--FONT-SHADOW-LIGHT);
@@ -375,6 +373,8 @@ h1, h2 {
 .main__biography-greet .main__h2 {
     color: var(--FONT-LIGHT);
     text-shadow: var(--BOX-SHADOW-DARK);
+    font-size: 2.1rem;
+    text-align: center;
 }
 
 .biography__table {
@@ -428,6 +428,8 @@ h1, h2 {
     background-color: rgba(0, 0, 0, 0.3);
     text-shadow: 2px 2px 5px #000;
     border-radius: 3px;
+    margin: auto;
+    
 }
 
 /* || SKILLS */

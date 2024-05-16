@@ -40,7 +40,7 @@ function save() {
     click += count
     let totalClick = `Total Clicks: ${click}`
 
-    saveEl.textContent = lap
+    saveEl.innerHTML += lap + "<br>"
     clickEl.textContent = totalClick
 
     countEl.textContent = 0

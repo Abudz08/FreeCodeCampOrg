@@ -9,8 +9,8 @@
 </head>
 <body>
     <div class="container">
-        <input type="name" id="player-el" placeholder="Player Name"></input><br>
-        <input type="number" id="bet-el" placeholder="$bet (min: 100)" min="100"></input><br>
+        <input type="name" id="player-el" placeholder="Player Name"><br>
+        <input type="number" id="bet-el" placeholder="$bet (min: 100)" min="100"><br>
         <button id="submit-btn" onclick="submit()">SUBMIT</button>
         
         <p id="greeting-el"></p>
@@ -23,15 +23,16 @@
             <a id="result-el"></a><br>
         </div>
 
-        <button id="start-btn" onclick="startGame()">START GAME</button>
-        <button id="getcard-btn" onclick="getCard()">GET CARD</button>
-        <button id="reset-btn" onclick="reset()">RESET</button><br><br>
+        <button id="start-btn" onclick="startGame()">START GAME (-$50)</button>
+        <button id="getcard-btn" onclick="getCard()">GET CARD (-$10)</button>
+        <button id="reset-btn" onclick="reset()">NEW GAME</button><br><br>
 
-        <label for="player-name">Player Name: </label>
-        <p id="player-name"></p>
         
-        <label for="bet-amount">Remaining Bet: </label>
-        <p id="bet-amount"></p>
+        <p id="player-name">Player Name</p>
+        <p id="bet-amount">Cash Amount</p>
+
+        <input type="number" id="addbet-el" placeholder="$addbet (min: 100)" min="100">
+        <button id="addbet-btn" onclick="addbet()">TOP UP</button>
 
     </div>
     
