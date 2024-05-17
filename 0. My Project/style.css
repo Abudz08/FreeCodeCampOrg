@@ -328,6 +328,7 @@ h1, h2 {
 /* || INTRODUCTON */
 .main__introduction-image {
     width: 30vw;
+    max-width: 250px;
     height: auto;
 
     /* this will let the text to be inline with the image */

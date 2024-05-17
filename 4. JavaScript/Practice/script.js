@@ -118,24 +118,65 @@ shelf()
 // | CHROME EXTENSIONS
 
 let myLeads = []
-let count = 0
+
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
-let ulEl = document.getElementById("ul-el")
+const deleteBtn = document.getElementById("delete-btn")
+const tabBtn = document.getElementById("tab-btn")
+const ulEl = document.getElementById("ul-el")
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
+
+if (leadsFromLocalStorage) {
+    myLeads = leadsFromLocalStorage
+    render(myLeads)
+}
+
+function render(leads) {
+    let listItems = ""
+    for (let i = 0; i < leads.length; i++) {
+         listItems += `
+            <li>
+                <a href='https://${leads[i]}' target='_blank'>
+                    ${leads[i]}
+                </a>
+            </li>
+        `
+    }
+    ulEl.innerHTML = listItems
+}
 
 inputBtn.addEventListener(
     "click",
     function() {
         myLeads.push(inputEl.value)
-        ulEl.innerHTML += "<li><a href='https://" + myLeads[count] + "' target='_blank'>" + myLeads[count] + "</a></li>"
         inputEl.value = ""
-        // const li = document.createElement("li")
-        // li.textContent = myLeads[count]
-        // ulEl.append(li)
-
-        count++
+        localStorage.setItem("myLeads", JSON.stringify(myLeads))
+        render(myLeads)
     }
 )
+
+tabBtn.addEventListener(
+    "click",
+    function() {
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs){    
+            myLeads.push(tabs[0].url)
+            localStorage.setItem("myLeads", JSON.stringify(myLeads))
+            render(myLeads)
+        })
+    }
+)
+
+deleteBtn.addEventListener(
+    "dblclick",
+    function() {
+        localStorage.clear()
+        myLeads = []
+        render(myLeads)
+    }
+)
+
+
+// | OPEN BOX
 
 openBox = document.getElementById("container")
 
@@ -146,6 +187,9 @@ openBox.addEventListener(
     }
 )
 
+
+// | BUY BUTTON
+
 let buyBtn = document.getElementById("container2")
 
 buyBtn.innerHTML = "<br><br><button onclick='buy()'>BUY!</button>"
@@ -153,3 +197,132 @@ buyBtn.innerHTML = "<br><br><button onclick='buy()'>BUY!</button>"
 function buy() {
     buyBtn.innerHTML += "<br><br><p>Thank you for buying</p>"
 }
+
+
+// | SUM
+
+function add(num1, num2) {
+    let sum = num1 + num2
+    return sum
+}
+
+console.log (add(18, 35))
+
+
+// | NAME
+
+function getFirst(names) {
+    return names[1]
+}
+
+let name =  getFirst(["Abudz", "Joseph", "Jove"])
+
+console.log(name)
+
+
+// | WINNER OF THE GAME
+
+const player = "Per"
+const opponent = "Nick"
+const game = "Amazing Fighter"
+let points = 0
+let hasWon = false
+
+points += 100
+hasWon = false
+
+if (hasWon) {
+    console.log(`${player} got ${points} points and won the ${game} game!`)
+}
+
+else {
+    console.log(`The winner is ${opponent}! ${player} lost the game.`)
+}
+
+// | MY COURSES
+
+let myCourses = [
+    "Learn CSS Animations",
+    "UI Design Fundamentals",
+    "Intro to Clean Code"
+]
+
+function courses(topic) {
+    for (let i=0; i<topic.length ; i++) {
+        console.log(topic[i])
+    }
+}
+
+courses(myCourses)
+
+
+// | SAVE AND FETCH FROM LOCAL STORAGE
+
+// JSON.parse(localStorage.getItem("myLeads"))
+// JSON.parse() is a method in JavaScript used to parse a JSON string and convert it into a JavaScript object.
+
+// localStorage.setItem("myLeads", JSON.stringify(myLeads))
+// JSON.stringify() is a method used to convert a JavaScript value (object, array, string, number, etc.) into a JSON string. This string representation of the data can then be easily transmitted or stored, often used for sending data to web servers or saving it to files.
+
+// localStorage.setItem("variable", "value")
+localStorage.setItem("myCredits", "100")
+console.log(localStorage.getItem("myCredits"))
+
+
+// | LOG DATA SCORE
+
+let data = [
+    {
+        player: "Abudz",
+        score: 35
+    },
+    {
+        player: "Jove",
+        score: 18
+    }
+]
+
+const logBtn = document.getElementById("log-btn")
+const logScore = document.getElementById("log-score")
+
+logBtn.addEventListener ("click", function() {
+    logScore.textContent = `${data[0].player}'s score is ${data[0].score}.`
+})
+
+
+// | GENERATE SENTENCE
+
+function generateSentence(desc,arr) {
+    console.log(`The ${arr.length} ${desc} are `)
+    for (let i = 0; i < arr.length ; i++) {
+        if (i === arr.length - 1) {
+            console.log(`and ${arr[i]}`)
+        } else {
+            console.log(`${arr[i]}, `)
+        }
+    }
+}
+
+let countries = ["China", "India", "USA"]
+let fruits = ["Apples", "Bananas"]
+
+generateSentence ("Largest Countries", countries)
+generateSentence ("Best Fruits", fruits)
+
+// | RENDER IMAGES
+
+let containerEl = document.getElementById("container3")
+const imgs = [
+    "./images/joseph.jpg",
+    "./images/jove.jpg",
+    "./images/nash.jpg"
+]
+
+function renderTeam() {
+    for (let i = 0; i < imgs.length; i++) {
+        containerEl.innerHTML += `<img class="team-img" src="${imgs[i]}">`
+    }
+}
+
+renderTeam()
+
