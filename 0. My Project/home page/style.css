@@ -138,8 +138,8 @@ h1, h2 {
 
 .header__nav {
     background-color: var(--BG-DARK);
-    /* display: none; */
-    transform-origin: top center;
+    display: none;
+    transform-origin: top right;
     animation: showMenu 0.5s ease-in-out forwards;
 }
 
