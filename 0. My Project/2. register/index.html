@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Killua - Home Page</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+
+        <img class="logo" src="agent x killua row 150px.png">
+
+        <form action="https://httpbin.org/get" method="get" class="form">
+                
+             <div class="input-group">
+                <input type="email" id="email" placeholder="Email" required>
+                <span id="msg-email"></span>
+            </div>
+            <div class="input-group">
+                <input type="text" id="fullname" placeholder="Full Name" required>
+                <span id="msg-fullname"></span>
+            </div>
+            <div class="input-group">
+                <input type="username" id="username" placeholder="Username" required>
+                <span id="msg-username"></span>
+            </div>
+            <div class="input-group pass">
+                <input type="password" id="password" placeholder="Password" required>
+                <i id="toggle-password" class="fas fa-eye-slash">
+                    <img id="hide" src="fa-eye-slash.png">
+                </i>
+                <span id="msg-password"></span>
+            </div>
+            
+        </form>
+        <button id="register-btn" type="submit">Sign up</button>
+        <span id="msg-success"></span>
+    </div>
+
+    <div class="container register">
+        <p>Have an account?</p>
+        <a href="https://abudz08.github.io/agentxkillua-login/" id="login">LOG IN</a>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
