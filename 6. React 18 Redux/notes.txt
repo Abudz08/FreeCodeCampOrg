@@ -1,0 +1,17 @@
+https://www.youtube.com/watch?v=2-crBg6wpp0&list=PLWKjhJtqVAbmMuZ3saqRIBimAKIMYkt0E&index=13
+
+node --version
+
+navigate folder with <dir> and <cd folder-name> command
+
+npx create-react-app my-app
+npx create-react-app@latest react-tutorial
+
+cd my-app
+npm start
+
+npm run build       bundles the app into static files fo production
+npm test            starts the test runner
+npm run reject      removes this tool and copies build dependencies
+
+https://github.com/john-smilga/react-course-v3/tree/main/01-fundamentals

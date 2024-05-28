@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+
+<!-- //////////////////////////////////////////////////////////////////////
+                        REGISTRATION SECTION 
+////////////////////////////////////////////////////////////////////-->
+<section id="registration" class="registration">
+    <h1>Registration Form</h1>
+    <p>Please fill out this form with required information</p>
+    <form action="https://register-demo.freecodecamp.org">
+        <fieldset>
+
+            <div class="fullname">
+                <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
+                <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
+            </div>
+
+            <input type="email" id="email" name="email" placeholder="Email" required>
+
+            <div class="password">
+                <input type="password" id="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+
+                <!-- (?=.*\d):  This positive lookahead assertion ensures the password contains at least one digit (\d).
+                (?=.*[a-z]):    This positive lookahead assertion ensures the password contains at least one lowercase letter ([a-z]).
+                (?=.*[A-Z]):    This positive lookahead assertion ensures the password contains at least one uppercase letter ([A-Z]).
+                .:              Matches any single character.
+                {8,}:           This quantifier specifies that the preceding character (.) must be repeated at least 8 times. -->
+
+                <p id="password-mmessage">Your password require at least 8 characters with a mix of upper and lowercase letters and numbers. </p>
+            </div>
+            
+            <div class="sex">
+                <label for="sex">Sex:</label>
+                <input type="radio" name="sex" id="male"> Male
+                <input type="radio" name="sex" id="female"> Female
+                <input type="radio" name="sex" id="other"> Other
+
+                <!-- having the same name for the radio button will make the user to select only one -->
+            </div>
+
+            <label for="picture">
+                Upload a profile picture
+                <input type="file" name="picture" id="picture">
+            </label>
+            <label for="age">
+                Input yor age years:
+                <input type="number" name="age" id="age" min="13" max="120">
+            </label>
+
+            <label for="referrer">
+                How did you hear about us?
+            </label>
+            <select name="referrer" name="referrer" id="referrer" required>      
+                <option value="">(select one)</option>
+                <option value="1">Facebook</option>
+                <option value="2">Youtube</option>
+                <option value="3">Tiktok</option>
+                <option value="4">Other</option>
+            </select>
+
+            <label for="message">
+                Provide a bio:
+                <textarea name="message" id="messsage" rows="3" cols="30" placeholder="Your message here"></textarea>
+            </label>
+
+            <input type="checkbox" required> I accept <a href="#">terms and conditions</a>
+            
+        </fieldset>
+
+        <button type="submit">Submit</button>
+        <!-- type submit at the end before the closing tag form to ensure that all information with required attribute are filed -->
+
+    </form>
+</section>
+
+</body>
+</html>
